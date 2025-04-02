@@ -29,7 +29,20 @@ namespace SheetMusicManager
             btnLogin.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnLogin.Width, btnLogin.Height, 25, 25));
 
             panelBuscar.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panelBuscar.Width, panelBuscar.Height, 15, 15));
+
+            btnSubirPartitura.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btnSubirPartitura.Width, btnSubirPartitura.Height, 25, 25));
+
         }
+
+        private void CargarUploadSheetsControl()
+        {
+            mainContentPanel.Controls.Clear();
+            UploadSheetsControl1 upload = new UploadSheetsControl1();
+            upload.Dock = DockStyle.Fill;
+            mainContentPanel.Controls.Add(upload);
+        }
+
+
 
         private void panelBuscar_Paint(object sender, PaintEventArgs e)
         {
@@ -38,6 +51,18 @@ namespace SheetMusicManager
             Color.LightGray, 2, ButtonBorderStyle.Solid,
             Color.LightGray, 2, ButtonBorderStyle.Solid,
             Color.LightGray, 2, ButtonBorderStyle.Solid);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.ShowDialog();
+        }
+
+        private void btnSubirPartitura_Click(object sender, EventArgs e)
+        {
+            CargarUploadSheetsControl();
+
         }
     }
 }

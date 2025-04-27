@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelHeader = new Panel();
+            btnLogout = new Button();
             btnSubirPartitura = new Button();
             label5 = new Label();
             panelBuscar = new Panel();
@@ -48,6 +49,7 @@
             // 
             // panelHeader
             // 
+            panelHeader.Controls.Add(btnLogout);
             panelHeader.Controls.Add(btnSubirPartitura);
             panelHeader.Controls.Add(label5);
             panelHeader.Controls.Add(panelBuscar);
@@ -62,15 +64,36 @@
             panelHeader.Size = new Size(2261, 100);
             panelHeader.TabIndex = 0;
             // 
+            // btnLogout
+            // 
+            btnLogout.BackColor = Color.DimGray;
+            btnLogout.Cursor = Cursors.Hand;
+            btnLogout.FlatAppearance.BorderSize = 0;
+            btnLogout.FlatStyle = FlatStyle.Flat;
+            btnLogout.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogout.ForeColor = Color.Transparent;
+            btnLogout.Image = Properties.Resources.whiteuser4__1_1;
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Location = new Point(1702, 23);
+            btnLogout.Name = "btnLogout";
+            btnLogout.Size = new Size(187, 55);
+            btnLogout.TabIndex = 8;
+            btnLogout.TabStop = false;
+            btnLogout.Text = "    Cerrar sesión";
+            btnLogout.UseVisualStyleBackColor = false;
+            btnLogout.Visible = false;
+            btnLogout.Click += btnLogout_Click;
+            // 
             // btnSubirPartitura
             // 
             btnSubirPartitura.BackColor = Color.White;
+            btnSubirPartitura.Cursor = Cursors.Hand;
             btnSubirPartitura.FlatAppearance.BorderColor = Color.LightGray;
             btnSubirPartitura.FlatStyle = FlatStyle.Flat;
             btnSubirPartitura.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnSubirPartitura.Image = Properties.Resources.sheetm1;
             btnSubirPartitura.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSubirPartitura.Location = new Point(1250, 23);
+            btnSubirPartitura.Location = new Point(1271, 23);
             btnSubirPartitura.Name = "btnSubirPartitura";
             btnSubirPartitura.Size = new Size(191, 54);
             btnSubirPartitura.TabIndex = 1;
@@ -81,6 +104,7 @@
             // label5
             // 
             label5.AutoSize = true;
+            label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(61, 76, 158);
             label5.Location = new Point(212, 33);
@@ -88,6 +112,7 @@
             label5.Size = new Size(116, 30);
             label5.TabIndex = 7;
             label5.Text = "Partituras";
+            label5.Click += label5_Click;
             // 
             // panelBuscar
             // 
@@ -123,15 +148,18 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.FromArgb(61, 76, 158);
+            btnLogin.Cursor = Cursors.Hand;
+            btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = Color.Transparent;
             btnLogin.Image = Properties.Resources.whiteuser4__1_1;
             btnLogin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogin.Location = new Point(1460, 23);
+            btnLogin.Location = new Point(1488, 23);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(187, 55);
             btnLogin.TabIndex = 5;
+            btnLogin.TabStop = false;
             btnLogin.Text = "    Iniciar sesión";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
@@ -149,6 +177,7 @@
             // label3
             // 
             label3.AutoSize = true;
+            label3.Cursor = Cursors.Hand;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(548, 31);
             label3.Name = "label3";
@@ -159,12 +188,14 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Cursor = Cursors.Hand;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(361, 31);
             label1.Name = "label1";
             label1.Size = new Size(160, 30);
             label1.TabIndex = 1;
             label1.Text = "Mis partituras";
+            label1.Click += label1_Click;
             // 
             // pictureBox1
             // 
@@ -192,7 +223,8 @@
             Controls.Add(mainContentPanel);
             Controls.Add(panelHeader);
             Name = "MainForm";
-            Text = "MainForm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sheets";
             Load += MainForm_Load;
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
@@ -217,5 +249,6 @@
         private Label label5;
         private Button btnSubirPartitura;
         private Panel mainContentPanel;
+        private Button btnLogout;
     }
 }

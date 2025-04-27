@@ -1,14 +1,14 @@
 ﻿namespace SheetMusicManager
 {
-    partial class LoginForm
+    partial class RegisterForm
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,61 +23,119 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            panelLogin = new Panel();
+            lblContrasena = new Label();
+            panelRegister = new Panel();
+            label2 = new Label();
+            panelCorreo = new Panel();
+            pictureBox5 = new PictureBox();
+            txtCorreo = new TextBox();
             label1 = new Label();
             pictureBox4 = new PictureBox();
-            lblContrasenaO = new Label();
             lblRegistrar = new Label();
-            btnLogin = new Button();
+            btnRegister = new Button();
             panelPassword = new Panel();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             txtPassword = new TextBox();
-            lblContrasena = new Label();
             panelUsuario = new Panel();
             pictureBox1 = new PictureBox();
             txtUsuario = new TextBox();
             lblUsuario = new Label();
-            pictureBox5 = new PictureBox();
-            panelLogin.SuspendLayout();
+            pictureBox6 = new PictureBox();
+            panelRegister.SuspendLayout();
+            panelCorreo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panelPassword.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             SuspendLayout();
             // 
-            // panelLogin
+            // lblContrasena
             // 
-            panelLogin.BackColor = Color.Azure;
-            panelLogin.Controls.Add(label1);
-            panelLogin.Controls.Add(pictureBox4);
-            panelLogin.Controls.Add(lblContrasenaO);
-            panelLogin.Controls.Add(lblRegistrar);
-            panelLogin.Controls.Add(btnLogin);
-            panelLogin.Controls.Add(panelPassword);
-            panelLogin.Controls.Add(panelUsuario);
-            panelLogin.Location = new Point(365, 140);
-            panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(583, 609);
-            panelLogin.TabIndex = 1;
+            lblContrasena.AutoSize = true;
+            lblContrasena.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblContrasena.Location = new Point(12, 11);
+            lblContrasena.Name = "lblContrasena";
+            lblContrasena.Size = new Size(118, 28);
+            lblContrasena.TabIndex = 0;
+            lblContrasena.Text = "Contraseña";
+            // 
+            // panelRegister
+            // 
+            panelRegister.BackColor = Color.Azure;
+            panelRegister.Controls.Add(label2);
+            panelRegister.Controls.Add(panelCorreo);
+            panelRegister.Controls.Add(pictureBox4);
+            panelRegister.Controls.Add(lblRegistrar);
+            panelRegister.Controls.Add(btnRegister);
+            panelRegister.Controls.Add(panelPassword);
+            panelRegister.Controls.Add(panelUsuario);
+            panelRegister.Location = new Point(346, 79);
+            panelRegister.Name = "panelRegister";
+            panelRegister.Size = new Size(583, 700);
+            panelRegister.TabIndex = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Cursor = Cursors.Hand;
+            label2.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(62, 622);
+            label2.Name = "label2";
+            label2.Size = new Size(128, 21);
+            label2.TabIndex = 6;
+            label2.Text = "Ya tienes cuenta?";
+            // 
+            // panelCorreo
+            // 
+            panelCorreo.BackColor = Color.White;
+            panelCorreo.Controls.Add(pictureBox5);
+            panelCorreo.Controls.Add(txtCorreo);
+            panelCorreo.Controls.Add(label1);
+            panelCorreo.Location = new Point(119, 284);
+            panelCorreo.Name = "panelCorreo";
+            panelCorreo.Size = new Size(346, 90);
+            panelCorreo.TabIndex = 2;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.email;
+            pictureBox5.Location = new Point(12, 42);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(31, 31);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 1;
+            pictureBox5.TabStop = false;
+            // 
+            // txtCorreo
+            // 
+            txtCorreo.BorderStyle = BorderStyle.None;
+            txtCorreo.ForeColor = Color.Black;
+            txtCorreo.Location = new Point(49, 49);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(279, 24);
+            txtCorreo.TabIndex = 1;
+            txtCorreo.Text = "Correo Electrónico";
+            txtCorreo.Click += txtCorreo_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(62, 519);
+            label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(12, 11);
             label1.Name = "label1";
-            label1.Size = new Size(133, 21);
-            label1.TabIndex = 6;
-            label1.Text = "No tienes cuenta?";
+            label1.Size = new Size(75, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Correo";
             // 
             // pictureBox4
             // 
@@ -88,42 +146,32 @@
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
             // 
-            // lblContrasenaO
-            // 
-            lblContrasenaO.AutoSize = true;
-            lblContrasenaO.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContrasenaO.Location = new Point(367, 550);
-            lblContrasenaO.Name = "lblContrasenaO";
-            lblContrasenaO.Size = new Size(162, 21);
-            lblContrasenaO.TabIndex = 4;
-            lblContrasenaO.Text = "Contraseña Olvidada?";
-            // 
             // lblRegistrar
             // 
             lblRegistrar.AutoSize = true;
             lblRegistrar.Cursor = Cursors.Hand;
             lblRegistrar.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblRegistrar.ForeColor = Color.MediumBlue;
-            lblRegistrar.Location = new Point(62, 550);
+            lblRegistrar.Location = new Point(62, 653);
             lblRegistrar.Name = "lblRegistrar";
-            lblRegistrar.Size = new Size(88, 21);
+            lblRegistrar.Size = new Size(100, 21);
             lblRegistrar.TabIndex = 3;
-            lblRegistrar.Text = "Registrarse";
+            lblRegistrar.Text = "Iniciar sesión";
             lblRegistrar.Click += lblRegistrar_Click;
             // 
-            // btnLogin
+            // btnRegister
             // 
-            btnLogin.BackColor = Color.FromArgb(61, 76, 158);
-            btnLogin.FlatStyle = FlatStyle.Flat;
-            btnLogin.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnLogin.ForeColor = SystemColors.Control;
-            btnLogin.Location = new Point(119, 423);
-            btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(348, 56);
-            btnLogin.TabIndex = 2;
-            btnLogin.Text = "Login";
-            btnLogin.UseVisualStyleBackColor = false;
-            btnLogin.Click += btnLogin_Click;
+            btnRegister.BackColor = Color.FromArgb(61, 76, 158);
+            btnRegister.FlatStyle = FlatStyle.Flat;
+            btnRegister.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegister.ForeColor = SystemColors.Control;
+            btnRegister.Location = new Point(117, 526);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(348, 56);
+            btnRegister.TabIndex = 2;
+            btnRegister.Text = "Registrarse";
+            btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
             // 
             // panelPassword
             // 
@@ -132,7 +180,7 @@
             panelPassword.Controls.Add(pictureBox2);
             panelPassword.Controls.Add(txtPassword);
             panelPassword.Controls.Add(lblContrasena);
-            panelPassword.Location = new Point(121, 292);
+            panelPassword.Location = new Point(119, 400);
             panelPassword.Name = "panelPassword";
             panelPassword.Size = new Size(346, 90);
             panelPassword.TabIndex = 1;
@@ -167,16 +215,7 @@
             txtPassword.TabIndex = 1;
             txtPassword.Text = "*********";
             txtPassword.Click += txtPassword_Click;
-            // 
-            // lblContrasena
-            // 
-            lblContrasena.AutoSize = true;
-            lblContrasena.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblContrasena.Location = new Point(12, 11);
-            lblContrasena.Name = "lblContrasena";
-            lblContrasena.Size = new Size(118, 28);
-            lblContrasena.TabIndex = 0;
-            lblContrasena.Text = "Contraseña";
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // panelUsuario
             // 
@@ -219,34 +258,37 @@
             lblUsuario.TabIndex = 0;
             lblUsuario.Text = "Usuario";
             // 
-            // pictureBox5
+            // pictureBox6
             // 
-            pictureBox5.Cursor = Cursors.Hand;
-            pictureBox5.Image = Properties.Resources.close;
-            pictureBox5.Location = new Point(1190, 40);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(43, 39);
-            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox5.TabIndex = 2;
-            pictureBox5.TabStop = false;
-            pictureBox5.Click += pictureBox5_Click;
+            pictureBox6.Cursor = Cursors.Hand;
+            pictureBox6.Image = Properties.Resources.close;
+            pictureBox6.Location = new Point(1207, 25);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(43, 39);
+            pictureBox6.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox6.TabIndex = 3;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click;
             // 
-            // LoginForm
+            // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(217, 226, 243);
             ClientSize = new Size(1281, 869);
-            Controls.Add(pictureBox5);
-            Controls.Add(panelLogin);
+            Controls.Add(pictureBox6);
+            Controls.Add(panelRegister);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "LoginForm";
+            Name = "RegisterForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LoginForm";
-            Load += LoginForm_Load;
-            MouseDown += LoginForm_MouseDown;
-            panelLogin.ResumeLayout(false);
-            panelLogin.PerformLayout();
+            Text = "RegisterForm";
+            Load += RegisterForm_Load;
+            MouseDown += RegisterForm_MouseDown;
+            panelRegister.ResumeLayout(false);
+            panelRegister.PerformLayout();
+            panelCorreo.ResumeLayout(false);
+            panelCorreo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panelPassword.ResumeLayout(false);
             panelPassword.PerformLayout();
@@ -255,27 +297,30 @@
             panelUsuario.ResumeLayout(false);
             panelUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panelLogin;
-        private Panel panelUsuario;
-        private Label lblUsuario;
-        private TextBox txtUsuario;
-        private PictureBox pictureBox1;
+        private Label lblContrasena;
+        private Panel panelRegister;
+        private PictureBox pictureBox4;
+        private Label lblRegistrar;
+        private Button btnRegister;
         private Panel panelPassword;
+        private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private TextBox txtPassword;
-        private Label lblContrasena;
-        private PictureBox pictureBox3;
-        private Button btnLogin;
-        private Label lblContrasenaO;
-        private Label lblRegistrar;
-        private PictureBox pictureBox4;
-        private Label label1;
+        private Panel panelUsuario;
+        private PictureBox pictureBox1;
+        private TextBox txtUsuario;
+        private Label lblUsuario;
+        private Panel panelCorreo;
         private PictureBox pictureBox5;
+        private TextBox txtCorreo;
+        private Label label1;
+        private Label label2;
+        private PictureBox pictureBox6;
     }
 }

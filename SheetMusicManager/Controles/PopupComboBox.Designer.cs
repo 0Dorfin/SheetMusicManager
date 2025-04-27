@@ -1,42 +1,46 @@
-﻿namespace SheetMusicManager
+﻿namespace PresentationControls
 {
-    partial class UploadSheetsControl
+    partial class PopupComboBox
     {
-        /// <summary> 
+        /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary> 
+        /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if (disposing)
             {
-                components.Dispose();
+                if (components != null)
+                {
+                    components.Dispose();
+                }
+                if (dropDown != null)
+                {
+                    dropDown.Dispose();
+                }
             }
             base.Dispose(disposing);
         }
 
         #region Component Designer generated code
 
-        /// <summary> 
+        /// <summary>
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
+            this.SuspendLayout();
             // 
-            // UploadSheetsControl
+            // PopupComboBox
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            Name = "UploadSheetsControl";
-            Size = new Size(707, 493);
-            ResumeLayout(false);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

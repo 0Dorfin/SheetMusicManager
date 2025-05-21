@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             panelHeader = new Panel();
+            pictureBox3 = new PictureBox();
             btnLogout = new Button();
             btnSubirPartitura = new Button();
             label5 = new Label();
             panelBuscar = new Panel();
-            textBox1 = new TextBox();
+            textBoxBuscar = new TextBox();
             pictureBox2 = new PictureBox();
             btnLogin = new Button();
             label4 = new Label();
@@ -42,6 +44,7 @@
             pictureBox1 = new PictureBox();
             mainContentPanel = new Panel();
             panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panelBuscar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -49,6 +52,7 @@
             // 
             // panelHeader
             // 
+            panelHeader.Controls.Add(pictureBox3);
             panelHeader.Controls.Add(btnLogout);
             panelHeader.Controls.Add(btnSubirPartitura);
             panelHeader.Controls.Add(label5);
@@ -64,6 +68,19 @@
             panelHeader.Size = new Size(2261, 100);
             panelHeader.TabIndex = 0;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Cursor = Cursors.Hand;
+            pictureBox3.Image = Properties.Resources.bag;
+            pictureBox3.InitialImage = Properties.Resources.bag;
+            pictureBox3.Location = new Point(2072, 33);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(45, 45);
+            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox3.TabIndex = 2;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
             // btnLogout
             // 
             btnLogout.BackColor = Color.DimGray;
@@ -74,7 +91,7 @@
             btnLogout.ForeColor = Color.Transparent;
             btnLogout.Image = Properties.Resources.whiteuser4__1_1;
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogout.Location = new Point(1702, 23);
+            btnLogout.Location = new Point(1855, 25);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(187, 55);
             btnLogout.TabIndex = 8;
@@ -93,11 +110,11 @@
             btnSubirPartitura.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnSubirPartitura.Image = Properties.Resources.sheetm1;
             btnSubirPartitura.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSubirPartitura.Location = new Point(1271, 23);
+            btnSubirPartitura.Location = new Point(1400, 25);
             btnSubirPartitura.Name = "btnSubirPartitura";
             btnSubirPartitura.Size = new Size(191, 54);
             btnSubirPartitura.TabIndex = 1;
-            btnSubirPartitura.Text = "    Subir paritura";
+            btnSubirPartitura.Text = "    Subir partitura";
             btnSubirPartitura.UseVisualStyleBackColor = false;
             btnSubirPartitura.Click += btnSubirPartitura_Click;
             // 
@@ -107,7 +124,7 @@
             label5.Cursor = Cursors.Hand;
             label5.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(61, 76, 158);
-            label5.Location = new Point(212, 33);
+            label5.Location = new Point(341, 35);
             label5.Name = "label5";
             label5.Size = new Size(116, 30);
             label5.TabIndex = 7;
@@ -117,22 +134,24 @@
             // panelBuscar
             // 
             panelBuscar.BackColor = Color.White;
-            panelBuscar.Controls.Add(textBox1);
+            panelBuscar.Controls.Add(textBoxBuscar);
             panelBuscar.Controls.Add(pictureBox2);
-            panelBuscar.Location = new Point(818, 23);
+            panelBuscar.Location = new Point(947, 25);
             panelBuscar.Name = "panelBuscar";
             panelBuscar.Size = new Size(383, 55);
             panelBuscar.TabIndex = 6;
             panelBuscar.Paint += panelBuscar_Paint;
             // 
-            // textBox1
+            // textBoxBuscar
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Location = new Point(60, 14);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(304, 24);
-            textBox1.TabIndex = 1;
-            textBox1.Text = "Buscar partituras";
+            textBoxBuscar.BorderStyle = BorderStyle.None;
+            textBoxBuscar.Location = new Point(60, 14);
+            textBoxBuscar.Name = "textBoxBuscar";
+            textBoxBuscar.Size = new Size(304, 24);
+            textBoxBuscar.TabIndex = 1;
+            textBoxBuscar.Text = "Buscar partituras";
+            textBoxBuscar.Click += textBoxBuscar_Click;
+            textBoxBuscar.KeyDown += textBoxBuscar_KeyDown;
             // 
             // pictureBox2
             // 
@@ -147,6 +166,7 @@
             // 
             // btnLogin
             // 
+            btnLogin.AutoSize = true;
             btnLogin.BackColor = Color.FromArgb(61, 76, 158);
             btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatAppearance.BorderSize = 0;
@@ -155,9 +175,9 @@
             btnLogin.ForeColor = Color.Transparent;
             btnLogin.Image = Properties.Resources.whiteuser4__1_1;
             btnLogin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogin.Location = new Point(1488, 23);
+            btnLogin.Location = new Point(1626, 25);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(187, 55);
+            btnLogin.Size = new Size(200, 55);
             btnLogin.TabIndex = 5;
             btnLogin.TabStop = false;
             btnLogin.Text = "    Iniciar sesión";
@@ -167,30 +187,33 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.Cursor = Cursors.Hand;
             label4.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.Location = new Point(681, 31);
+            label4.Location = new Point(810, 33);
             label4.Name = "label4";
             label4.Size = new Size(83, 30);
             label4.TabIndex = 4;
             label4.Text = "Ventas";
+            label4.Click += label4_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Cursor = Cursors.Hand;
             label3.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(548, 31);
+            label3.Location = new Point(677, 33);
             label3.Name = "label3";
             label3.Size = new Size(105, 30);
             label3.TabIndex = 3;
             label3.Text = "Licencias";
+            label3.Click += label3_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Cursor = Cursors.Hand;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(361, 31);
+            label1.Location = new Point(490, 33);
             label1.Name = "label1";
             label1.Size = new Size(160, 30);
             label1.TabIndex = 1;
@@ -212,22 +235,24 @@
             mainContentPanel.Dock = DockStyle.Fill;
             mainContentPanel.Location = new Point(0, 100);
             mainContentPanel.Name = "mainContentPanel";
-            mainContentPanel.Size = new Size(2261, 1318);
+            mainContentPanel.Size = new Size(2261, 1344);
             mainContentPanel.TabIndex = 1;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2261, 1418);
+            ClientSize = new Size(2261, 1444);
             Controls.Add(mainContentPanel);
             Controls.Add(panelHeader);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Sheets";
+            Text = "Sheetify";
             Load += MainForm_Load;
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panelBuscar.ResumeLayout(false);
             panelBuscar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -245,10 +270,11 @@
         private Label label1;
         private Panel panelBuscar;
         private PictureBox pictureBox2;
-        private TextBox textBox1;
+        private TextBox textBoxBuscar;
         private Label label5;
         private Button btnSubirPartitura;
         private Panel mainContentPanel;
         private Button btnLogout;
+        private PictureBox pictureBox3;
     }
 }

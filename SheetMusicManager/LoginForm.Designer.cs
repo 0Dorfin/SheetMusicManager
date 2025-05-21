@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             panelLogin = new Panel();
+            labelOlvidada = new Label();
             label1 = new Label();
             pictureBox4 = new PictureBox();
-            lblContrasenaO = new Label();
             lblRegistrar = new Label();
             btnLogin = new Button();
             panelPassword = new Panel();
-            pictureBox3 = new PictureBox();
+            pictureBoxPass = new PictureBox();
             pictureBox2 = new PictureBox();
             txtPassword = new TextBox();
             lblContrasena = new Label();
@@ -47,7 +47,7 @@
             panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panelPassword.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPass).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panelUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -57,17 +57,30 @@
             // panelLogin
             // 
             panelLogin.BackColor = Color.Azure;
+            panelLogin.Controls.Add(labelOlvidada);
             panelLogin.Controls.Add(label1);
             panelLogin.Controls.Add(pictureBox4);
-            panelLogin.Controls.Add(lblContrasenaO);
             panelLogin.Controls.Add(lblRegistrar);
             panelLogin.Controls.Add(btnLogin);
             panelLogin.Controls.Add(panelPassword);
             panelLogin.Controls.Add(panelUsuario);
-            panelLogin.Location = new Point(365, 140);
+            panelLogin.Location = new Point(349, 140);
             panelLogin.Name = "panelLogin";
             panelLogin.Size = new Size(583, 609);
             panelLogin.TabIndex = 1;
+            // 
+            // labelOlvidada
+            // 
+            labelOlvidada.AutoSize = true;
+            labelOlvidada.Cursor = Cursors.Hand;
+            labelOlvidada.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelOlvidada.ForeColor = Color.MediumBlue;
+            labelOlvidada.Location = new Point(362, 550);
+            labelOlvidada.Name = "labelOlvidada";
+            labelOlvidada.Size = new Size(159, 21);
+            labelOlvidada.TabIndex = 7;
+            labelOlvidada.Text = "Contraseña olvidada?";
+            labelOlvidada.Click += labelOlvidada_Click;
             // 
             // label1
             // 
@@ -87,16 +100,6 @@
             pictureBox4.Size = new Size(259, 201);
             pictureBox4.TabIndex = 5;
             pictureBox4.TabStop = false;
-            // 
-            // lblContrasenaO
-            // 
-            lblContrasenaO.AutoSize = true;
-            lblContrasenaO.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblContrasenaO.Location = new Point(367, 550);
-            lblContrasenaO.Name = "lblContrasenaO";
-            lblContrasenaO.Size = new Size(162, 21);
-            lblContrasenaO.TabIndex = 4;
-            lblContrasenaO.Text = "Contraseña Olvidada?";
             // 
             // lblRegistrar
             // 
@@ -128,7 +131,7 @@
             // panelPassword
             // 
             panelPassword.BackColor = Color.White;
-            panelPassword.Controls.Add(pictureBox3);
+            panelPassword.Controls.Add(pictureBoxPass);
             panelPassword.Controls.Add(pictureBox2);
             panelPassword.Controls.Add(txtPassword);
             panelPassword.Controls.Add(lblContrasena);
@@ -137,15 +140,18 @@
             panelPassword.Size = new Size(346, 90);
             panelPassword.TabIndex = 1;
             // 
-            // pictureBox3
+            // pictureBoxPass
             // 
-            pictureBox3.Image = Properties.Resources.visible__1_;
-            pictureBox3.Location = new Point(269, 42);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(31, 31);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
+            pictureBoxPass.Cursor = Cursors.Hand;
+            pictureBoxPass.Image = Properties.Resources.visible__1_;
+            pictureBoxPass.Location = new Point(269, 42);
+            pictureBoxPass.Name = "pictureBoxPass";
+            pictureBoxPass.Size = new Size(31, 31);
+            pictureBoxPass.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxPass.TabIndex = 2;
+            pictureBoxPass.TabStop = false;
+            pictureBoxPass.MouseDown += pictureBoxPass_MouseDown;
+            pictureBoxPass.MouseUp += pictureBoxPass_MouseUp;
             // 
             // pictureBox2
             // 
@@ -166,7 +172,7 @@
             txtPassword.Size = new Size(279, 24);
             txtPassword.TabIndex = 1;
             txtPassword.Text = "*********";
-            txtPassword.Click += txtPassword_Click;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // lblContrasena
             // 
@@ -250,7 +256,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panelPassword.ResumeLayout(false);
             panelPassword.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPass).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panelUsuario.ResumeLayout(false);
             panelUsuario.PerformLayout();
@@ -270,12 +276,12 @@
         private PictureBox pictureBox2;
         private TextBox txtPassword;
         private Label lblContrasena;
-        private PictureBox pictureBox3;
+        private PictureBox pictureBoxPass;
         private Button btnLogin;
-        private Label lblContrasenaO;
         private Label lblRegistrar;
         private PictureBox pictureBox4;
         private Label label1;
         private PictureBox pictureBox5;
+        private Label labelOlvidada;
     }
 }

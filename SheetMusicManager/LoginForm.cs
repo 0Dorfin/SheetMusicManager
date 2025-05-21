@@ -59,7 +59,7 @@ namespace SheetMusicManager
 
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
             {
-                MessageBox.Show("Por favor, introduce un usuario y una contraseña para registrarte.");
+                MessageBox.Show("Por favor, introduce un usuario y una contraseña para registrarte.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -68,7 +68,6 @@ namespace SheetMusicManager
             {
                 conn.Open();
 
-                // Verificar si ya existe
                 string check = "SELECT COUNT(*) FROM Usuarios WHERE NombreUsuario = @usuario";
                 SqlCommand checkCmd = new SqlCommand(check, conn);
                 checkCmd.Parameters.AddWithValue("@usuario", usuario);
@@ -76,18 +75,17 @@ namespace SheetMusicManager
 
                 if (exists > 0)
                 {
-                    MessageBox.Show("❌ Ya existe un usuario con ese nombre.");
+                    MessageBox.Show("Ya existe un usuario con ese nombre.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Insertar nuevo usuario
                 string insert = "INSERT INTO Usuarios (NombreUsuario, Contrasena) VALUES (@usuario, @contrasena)";
                 SqlCommand cmd = new SqlCommand(insert, conn);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
                 cmd.Parameters.AddWithValue("@contrasena", contrasena);
                 cmd.ExecuteNonQuery();
 
-                MessageBox.Show("✅ Usuario registrado correctamente. Ahora puedes iniciar sesión.");
+                MessageBox.Show("Usuario registrado correctamente.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -98,7 +96,7 @@ namespace SheetMusicManager
 
             if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasena))
             {
-                MessageBox.Show("Por favor, completa todos los campos.");
+                MessageBox.Show("Por favor, completa todos los campos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -106,30 +104,41 @@ namespace SheetMusicManager
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();
-                string query = "SELECT Id, NombreUsuario FROM Usuarios WHERE NombreUsuario = @usuario AND Contrasena = @contrasena";
+                string query = "SELECT Id, NombreUsuario, Contrasena, Admin FROM Usuarios WHERE NombreUsuario = @usuario";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contrasena", contrasena);
 
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    Session.UsuarioId = reader.GetInt32(0);
-                    Session.NombreUsuario = reader.GetString(1);
+                    int userId = reader.GetInt32(0);
+                    string nombreUsuario = reader.GetString(1);
+                    string hashAlmacenado = reader.GetString(2);
+                    bool Admin = reader.GetBoolean(3);
 
-                    // ✅ actualizar el botón desde MainForm
-                    MainForm mainForm = Application.OpenForms["MainForm"] as MainForm;
-                    if (mainForm != null)
+                    if (BCrypt.Net.BCrypt.Verify(contrasena, hashAlmacenado))
                     {
-                        mainForm.ActualizarNombreUsuario();
-                    }
+                        Session.UsuarioId = userId;
+                        Session.NombreUsuario = nombreUsuario;
+                        Session.Admin = Admin;
 
-                    MessageBox.Show("✅ Inicio de sesión exitoso");
-                    this.Close(); // cerramos solo el login
+                        MainForm mainForm = Application.OpenForms["MainForm"] as MainForm;
+                        if (mainForm != null)
+                        {
+                            mainForm.ActualizarNombreUsuario();
+                        }
+
+                        MessageBox.Show("Inicio de sesión exitoso", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario o contraseña incorrectos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("❌ Usuario o contraseña incorrectos");
+                    MessageBox.Show("Usuario o contraseña incorrectos", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -144,22 +153,11 @@ namespace SheetMusicManager
             }
         }
 
-        private void txtPassword_Click(object sender, EventArgs e)
-        {
-            if (txtPassword.Text == "*********")
-            {
-                txtPassword.Text = "";
-                txtPassword.ForeColor = Color.Black;
-                txtPassword.UseSystemPasswordChar = true;
-            }
-        }
-
         private void lblRegistrar_Click(object sender, EventArgs e)
         {
             this.Hide();
             RegisterForm registerForm = new RegisterForm();
             registerForm.ShowDialog();
-            this.Show();
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -171,6 +169,33 @@ namespace SheetMusicManager
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+        }
+
+        private void pictureBoxPass_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = false;
+        }
+
+        private void pictureBoxPass_MouseUp(object sender, MouseEventArgs e)
+        {
+            txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "*********")
+            {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.Black;
+            }
+            txtPassword.UseSystemPasswordChar = true;
+        }
+
+        private void labelOlvidada_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            ForgotPasswordForm forgotPasswordForm = new ForgotPasswordForm();
+            forgotPasswordForm.ShowDialog();
         }
     }
 }

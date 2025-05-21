@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace SheetMusicManager
 {
     internal static class Program

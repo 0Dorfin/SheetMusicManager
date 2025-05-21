@@ -30,6 +30,7 @@
         {
             flowPartiturasPanel = new FlowLayoutPanel();
             filaPartitura = new Panel();
+            btnEditar = new PictureBox();
             txtAgrupacion = new Label();
             btnDescargar = new PictureBox();
             txtCompositor = new Label();
@@ -40,6 +41,7 @@
             txtInstrumentos = new Label();
             txtPartitura = new Label();
             filaPartirua = new Panel();
+            label11 = new Label();
             label9 = new Label();
             label10 = new Label();
             label8 = new Label();
@@ -51,6 +53,17 @@
             label5 = new Label();
             panelOpciones = new Panel();
             panelFilters = new Panel();
+            linkXFavorita = new LinkLabel();
+            linkLabelFavorita = new LinkLabel();
+            linkXPropia = new LinkLabel();
+            linkLabelPropia = new LinkLabel();
+            linkXComprada = new LinkLabel();
+            linkLabelComprada = new LinkLabel();
+            label13 = new Label();
+            linkXGratuita = new LinkLabel();
+            linkLabelGratuita = new LinkLabel();
+            labelLimpiar = new Label();
+            label12 = new Label();
             linkXCoro = new LinkLabel();
             linkLabelCoro = new LinkLabel();
             linkXOrquesta = new LinkLabel();
@@ -141,10 +154,12 @@
             panelBuscar = new Panel();
             textBoxMisPartituras = new TextBox();
             pictureBox2 = new PictureBox();
-            label1 = new Label();
+            labelUsuario = new Label();
             sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
+            labelMostrar = new Label();
             flowPartiturasPanel.SuspendLayout();
             filaPartitura.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnEditar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnDescargar).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnVer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnEliminar).BeginInit();
@@ -182,15 +197,17 @@
             // 
             // flowPartiturasPanel
             // 
+            flowPartiturasPanel.AutoScroll = true;
             flowPartiturasPanel.BorderStyle = BorderStyle.FixedSingle;
             flowPartiturasPanel.Controls.Add(filaPartitura);
-            flowPartiturasPanel.Location = new Point(337, 387);
+            flowPartiturasPanel.Location = new Point(337, 362);
             flowPartiturasPanel.Name = "flowPartiturasPanel";
-            flowPartiturasPanel.Size = new Size(1410, 568);
+            flowPartiturasPanel.Size = new Size(1530, 958);
             flowPartiturasPanel.TabIndex = 0;
             // 
             // filaPartitura
             // 
+            filaPartitura.Controls.Add(btnEditar);
             filaPartitura.Controls.Add(txtAgrupacion);
             filaPartitura.Controls.Add(btnDescargar);
             filaPartitura.Controls.Add(txtCompositor);
@@ -203,8 +220,19 @@
             filaPartitura.Location = new Point(2, 2);
             filaPartitura.Margin = new Padding(2);
             filaPartitura.Name = "filaPartitura";
-            filaPartitura.Size = new Size(1418, 79);
+            filaPartitura.Size = new Size(1524, 79);
             filaPartitura.TabIndex = 0;
+            // 
+            // btnEditar
+            // 
+            btnEditar.Image = Properties.Resources.editing;
+            btnEditar.Location = new Point(1350, 17);
+            btnEditar.Margin = new Padding(2);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(41, 40);
+            btnEditar.SizeMode = PictureBoxSizeMode.StretchImage;
+            btnEditar.TabIndex = 11;
+            btnEditar.TabStop = false;
             // 
             // txtAgrupacion
             // 
@@ -221,7 +249,7 @@
             // btnDescargar
             // 
             btnDescargar.Image = Properties.Resources.download_pdf;
-            btnDescargar.Location = new Point(1231, 19);
+            btnDescargar.Location = new Point(1236, 19);
             btnDescargar.Margin = new Padding(2);
             btnDescargar.Name = "btnDescargar";
             btnDescargar.Size = new Size(47, 40);
@@ -242,6 +270,7 @@
             // 
             // btnVer
             // 
+            btnVer.Cursor = Cursors.Hand;
             btnVer.Image = Properties.Resources.preview;
             btnVer.Location = new Point(1123, 21);
             btnVer.Margin = new Padding(2);
@@ -254,7 +283,7 @@
             // btnEliminar
             // 
             btnEliminar.Image = Properties.Resources.delete1;
-            btnEliminar.Location = new Point(1337, 21);
+            btnEliminar.Location = new Point(1455, 19);
             btnEliminar.Margin = new Padding(2);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(40, 38);
@@ -309,6 +338,7 @@
             // 
             // filaPartirua
             // 
+            filaPartirua.Controls.Add(label11);
             filaPartirua.Controls.Add(label9);
             filaPartirua.Controls.Add(label10);
             filaPartirua.Controls.Add(label8);
@@ -318,11 +348,22 @@
             filaPartirua.Controls.Add(label3);
             filaPartirua.Controls.Add(label4);
             filaPartirua.Controls.Add(label5);
-            filaPartirua.Location = new Point(339, 301);
+            filaPartirua.Location = new Point(339, 276);
             filaPartirua.Margin = new Padding(2);
             filaPartirua.Name = "filaPartirua";
-            filaPartirua.Size = new Size(1408, 70);
+            filaPartirua.Size = new Size(1525, 70);
             filaPartirua.TabIndex = 5;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label11.Location = new Point(1340, 21);
+            label11.Margin = new Padding(2, 0, 2, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(63, 28);
+            label11.TabIndex = 10;
+            label11.Text = "Editar";
             // 
             // label9
             // 
@@ -339,7 +380,7 @@
             // 
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label10.Location = new Point(1206, 21);
+            label10.Location = new Point(1210, 21);
             label10.Margin = new Padding(2, 0, 2, 0);
             label10.Name = "label10";
             label10.Size = new Size(99, 28);
@@ -361,7 +402,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(1323, 21);
+            label7.Location = new Point(1441, 21);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(66, 28);
@@ -429,11 +470,22 @@
             panelOpciones.Dock = DockStyle.Left;
             panelOpciones.Location = new Point(0, 0);
             panelOpciones.Name = "panelOpciones";
-            panelOpciones.Size = new Size(300, 1606);
+            panelOpciones.Size = new Size(300, 2019);
             panelOpciones.TabIndex = 1;
             // 
             // panelFilters
             // 
+            panelFilters.Controls.Add(linkXFavorita);
+            panelFilters.Controls.Add(linkLabelFavorita);
+            panelFilters.Controls.Add(linkXPropia);
+            panelFilters.Controls.Add(linkLabelPropia);
+            panelFilters.Controls.Add(linkXComprada);
+            panelFilters.Controls.Add(linkLabelComprada);
+            panelFilters.Controls.Add(label13);
+            panelFilters.Controls.Add(linkXGratuita);
+            panelFilters.Controls.Add(linkLabelGratuita);
+            panelFilters.Controls.Add(labelLimpiar);
+            panelFilters.Controls.Add(label12);
             panelFilters.Controls.Add(linkXCoro);
             panelFilters.Controls.Add(linkLabelCoro);
             panelFilters.Controls.Add(linkXOrquesta);
@@ -453,10 +505,182 @@
             panelFilters.Controls.Add(labelInstrtumento);
             panelFilters.Controls.Add(labelEpoca);
             panelFilters.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panelFilters.Location = new Point(16, 224);
+            panelFilters.Location = new Point(16, 188);
             panelFilters.Name = "panelFilters";
-            panelFilters.Size = new Size(260, 1400);
+            panelFilters.Size = new Size(284, 1801);
             panelFilters.TabIndex = 0;
+            // 
+            // linkXFavorita
+            // 
+            linkXFavorita.ActiveLinkColor = Color.FromArgb(61, 76, 158);
+            linkXFavorita.AutoSize = true;
+            linkXFavorita.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkXFavorita.ForeColor = Color.FromArgb(61, 76, 158);
+            linkXFavorita.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkXFavorita.LinkColor = Color.FromArgb(61, 76, 158);
+            linkXFavorita.Location = new Point(160, 238);
+            linkXFavorita.Margin = new Padding(2, 0, 2, 0);
+            linkXFavorita.Name = "linkXFavorita";
+            linkXFavorita.Size = new Size(30, 32);
+            linkXFavorita.TabIndex = 45;
+            linkXFavorita.TabStop = true;
+            linkXFavorita.Text = "×";
+            linkXFavorita.Visible = false;
+            linkXFavorita.VisitedLinkColor = Color.FromArgb(61, 76, 158);
+            // 
+            // linkLabelFavorita
+            // 
+            linkLabelFavorita.ActiveLinkColor = Color.FromArgb(61, 76, 158);
+            linkLabelFavorita.AutoSize = true;
+            linkLabelFavorita.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabelFavorita.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabelFavorita.LinkColor = Color.Black;
+            linkLabelFavorita.Location = new Point(48, 241);
+            linkLabelFavorita.Margin = new Padding(2, 0, 2, 0);
+            linkLabelFavorita.Name = "linkLabelFavorita";
+            linkLabelFavorita.Size = new Size(82, 28);
+            linkLabelFavorita.TabIndex = 44;
+            linkLabelFavorita.TabStop = true;
+            linkLabelFavorita.Text = "Favorita";
+            linkLabelFavorita.VisitedLinkColor = Color.FromArgb(61, 76, 158);
+            // 
+            // linkXPropia
+            // 
+            linkXPropia.ActiveLinkColor = Color.FromArgb(61, 76, 158);
+            linkXPropia.AutoSize = true;
+            linkXPropia.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkXPropia.ForeColor = Color.FromArgb(61, 76, 158);
+            linkXPropia.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkXPropia.LinkColor = Color.FromArgb(61, 76, 158);
+            linkXPropia.Location = new Point(137, 197);
+            linkXPropia.Margin = new Padding(2, 0, 2, 0);
+            linkXPropia.Name = "linkXPropia";
+            linkXPropia.Size = new Size(30, 32);
+            linkXPropia.TabIndex = 43;
+            linkXPropia.TabStop = true;
+            linkXPropia.Text = "×";
+            linkXPropia.Visible = false;
+            linkXPropia.VisitedLinkColor = Color.FromArgb(61, 76, 158);
+            // 
+            // linkLabelPropia
+            // 
+            linkLabelPropia.ActiveLinkColor = Color.FromArgb(61, 76, 158);
+            linkLabelPropia.AutoSize = true;
+            linkLabelPropia.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabelPropia.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabelPropia.LinkColor = Color.Black;
+            linkLabelPropia.Location = new Point(48, 200);
+            linkLabelPropia.Margin = new Padding(2, 0, 2, 0);
+            linkLabelPropia.Name = "linkLabelPropia";
+            linkLabelPropia.Size = new Size(69, 28);
+            linkLabelPropia.TabIndex = 42;
+            linkLabelPropia.TabStop = true;
+            linkLabelPropia.Text = "Propia";
+            linkLabelPropia.VisitedLinkColor = Color.FromArgb(61, 76, 158);
+            // 
+            // linkXComprada
+            // 
+            linkXComprada.ActiveLinkColor = Color.FromArgb(61, 76, 158);
+            linkXComprada.AutoSize = true;
+            linkXComprada.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkXComprada.ForeColor = Color.FromArgb(61, 76, 158);
+            linkXComprada.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkXComprada.LinkColor = Color.FromArgb(61, 76, 158);
+            linkXComprada.Location = new Point(173, 115);
+            linkXComprada.Margin = new Padding(2, 0, 2, 0);
+            linkXComprada.Name = "linkXComprada";
+            linkXComprada.Size = new Size(30, 32);
+            linkXComprada.TabIndex = 41;
+            linkXComprada.TabStop = true;
+            linkXComprada.Text = "×";
+            linkXComprada.Visible = false;
+            linkXComprada.VisitedLinkColor = Color.FromArgb(61, 76, 158);
+            // 
+            // linkLabelComprada
+            // 
+            linkLabelComprada.ActiveLinkColor = Color.FromArgb(61, 76, 158);
+            linkLabelComprada.AutoSize = true;
+            linkLabelComprada.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabelComprada.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabelComprada.LinkColor = Color.Black;
+            linkLabelComprada.Location = new Point(48, 118);
+            linkLabelComprada.Margin = new Padding(2, 0, 2, 0);
+            linkLabelComprada.Name = "linkLabelComprada";
+            linkLabelComprada.Size = new Size(104, 28);
+            linkLabelComprada.TabIndex = 40;
+            linkLabelComprada.TabStop = true;
+            linkLabelComprada.Text = "Comprada";
+            linkLabelComprada.VisitedLinkColor = Color.FromArgb(61, 76, 158);
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label13.ForeColor = SystemColors.ControlDarkDark;
+            label13.Location = new Point(17, 78);
+            label13.Margin = new Padding(2, 0, 2, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(116, 32);
+            label13.TabIndex = 39;
+            label13.Text = "Categoría";
+            // 
+            // linkXGratuita
+            // 
+            linkXGratuita.ActiveLinkColor = Color.FromArgb(61, 76, 158);
+            linkXGratuita.AutoSize = true;
+            linkXGratuita.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkXGratuita.ForeColor = Color.FromArgb(61, 76, 158);
+            linkXGratuita.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkXGratuita.LinkColor = Color.FromArgb(61, 76, 158);
+            linkXGratuita.Location = new Point(152, 156);
+            linkXGratuita.Margin = new Padding(2, 0, 2, 0);
+            linkXGratuita.Name = "linkXGratuita";
+            linkXGratuita.Size = new Size(30, 32);
+            linkXGratuita.TabIndex = 37;
+            linkXGratuita.TabStop = true;
+            linkXGratuita.Text = "×";
+            linkXGratuita.Visible = false;
+            linkXGratuita.VisitedLinkColor = Color.FromArgb(61, 76, 158);
+            // 
+            // linkLabelGratuita
+            // 
+            linkLabelGratuita.ActiveLinkColor = Color.FromArgb(61, 76, 158);
+            linkLabelGratuita.AutoSize = true;
+            linkLabelGratuita.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            linkLabelGratuita.LinkBehavior = LinkBehavior.NeverUnderline;
+            linkLabelGratuita.LinkColor = Color.Black;
+            linkLabelGratuita.Location = new Point(48, 159);
+            linkLabelGratuita.Margin = new Padding(2, 0, 2, 0);
+            linkLabelGratuita.Name = "linkLabelGratuita";
+            linkLabelGratuita.Size = new Size(83, 28);
+            linkLabelGratuita.TabIndex = 36;
+            linkLabelGratuita.TabStop = true;
+            linkLabelGratuita.Text = "Gratuita";
+            linkLabelGratuita.VisitedLinkColor = Color.FromArgb(61, 76, 158);
+            // 
+            // labelLimpiar
+            // 
+            labelLimpiar.AutoSize = true;
+            labelLimpiar.Cursor = Cursors.Hand;
+            labelLimpiar.Font = new Font("Segoe UI", 9.857143F);
+            labelLimpiar.ForeColor = Color.FromArgb(61, 76, 158);
+            labelLimpiar.Location = new Point(207, 14);
+            labelLimpiar.Name = "labelLimpiar";
+            labelLimpiar.Size = new Size(77, 28);
+            labelLimpiar.TabIndex = 32;
+            labelLimpiar.Text = "Limpiar";
+            labelLimpiar.Visible = false;
+            labelLimpiar.Click += labelLimpiar_Click;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label12.Location = new Point(17, 8);
+            label12.Name = "label12";
+            label12.Size = new Size(99, 38);
+            label12.TabIndex = 31;
+            label12.Text = "Filtros";
             // 
             // linkXCoro
             // 
@@ -466,7 +690,7 @@
             linkXCoro.ForeColor = Color.FromArgb(61, 76, 158);
             linkXCoro.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXCoro.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXCoro.Location = new Point(100, 380);
+            linkXCoro.Location = new Point(126, 606);
             linkXCoro.Margin = new Padding(2, 0, 2, 0);
             linkXCoro.Name = "linkXCoro";
             linkXCoro.Size = new Size(30, 32);
@@ -483,7 +707,7 @@
             linkLabelCoro.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabelCoro.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabelCoro.LinkColor = Color.Black;
-            linkLabelCoro.Location = new Point(52, 383);
+            linkLabelCoro.Location = new Point(47, 609);
             linkLabelCoro.Margin = new Padding(2, 0, 2, 0);
             linkLabelCoro.Name = "linkLabelCoro";
             linkLabelCoro.Size = new Size(55, 28);
@@ -500,7 +724,7 @@
             linkXOrquesta.ForeColor = Color.FromArgb(61, 76, 158);
             linkXOrquesta.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXOrquesta.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXOrquesta.Location = new Point(142, 338);
+            linkXOrquesta.Location = new Point(168, 564);
             linkXOrquesta.Margin = new Padding(2, 0, 2, 0);
             linkXOrquesta.Name = "linkXOrquesta";
             linkXOrquesta.Size = new Size(30, 32);
@@ -517,7 +741,7 @@
             linkLabelOrquesta.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabelOrquesta.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabelOrquesta.LinkColor = Color.Black;
-            linkLabelOrquesta.Location = new Point(52, 342);
+            linkLabelOrquesta.Location = new Point(47, 568);
             linkLabelOrquesta.Margin = new Padding(2, 0, 2, 0);
             linkLabelOrquesta.Name = "linkLabelOrquesta";
             linkLabelOrquesta.Size = new Size(92, 28);
@@ -534,7 +758,7 @@
             linkXCamara.ForeColor = Color.FromArgb(61, 76, 158);
             linkXCamara.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXCamara.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXCamara.Location = new Point(128, 297);
+            linkXCamara.Location = new Point(157, 523);
             linkXCamara.Margin = new Padding(2, 0, 2, 0);
             linkXCamara.Name = "linkXCamara";
             linkXCamara.Size = new Size(30, 32);
@@ -551,7 +775,7 @@
             linkLabelCamara.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabelCamara.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabelCamara.LinkColor = Color.Black;
-            linkLabelCamara.Location = new Point(52, 300);
+            linkLabelCamara.Location = new Point(47, 526);
             linkLabelCamara.Margin = new Padding(2, 0, 2, 0);
             linkLabelCamara.Name = "linkLabelCamara";
             linkLabelCamara.Size = new Size(78, 28);
@@ -568,7 +792,7 @@
             linkXSolo.ForeColor = Color.FromArgb(61, 76, 158);
             linkXSolo.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXSolo.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXSolo.Location = new Point(100, 256);
+            linkXSolo.Location = new Point(126, 482);
             linkXSolo.Margin = new Padding(2, 0, 2, 0);
             linkXSolo.Name = "linkXSolo";
             linkXSolo.Size = new Size(30, 32);
@@ -585,7 +809,7 @@
             linkLabelSolo.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabelSolo.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabelSolo.LinkColor = Color.Black;
-            linkLabelSolo.Location = new Point(52, 258);
+            linkLabelSolo.Location = new Point(47, 484);
             linkLabelSolo.Margin = new Padding(2, 0, 2, 0);
             linkLabelSolo.Name = "linkLabelSolo";
             linkLabelSolo.Size = new Size(52, 28);
@@ -599,7 +823,7 @@
             labelAgrupacion.AutoSize = true;
             labelAgrupacion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelAgrupacion.ForeColor = SystemColors.ControlDarkDark;
-            labelAgrupacion.Location = new Point(22, 212);
+            labelAgrupacion.Location = new Point(17, 438);
             labelAgrupacion.Margin = new Padding(2, 0, 2, 0);
             labelAgrupacion.Name = "labelAgrupacion";
             labelAgrupacion.Size = new Size(136, 32);
@@ -621,7 +845,7 @@
             flowLayoutPanel1.Controls.Add(panel10);
             flowLayoutPanel1.Controls.Add(panelPercusion);
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(51, 468);
+            flowLayoutPanel1.Location = new Point(46, 694);
             flowLayoutPanel1.Margin = new Padding(2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(207, 895);
@@ -685,7 +909,7 @@
             panelTeclado.Location = new Point(21, 40);
             panelTeclado.Margin = new Padding(21, 2, 2, 2);
             panelTeclado.Name = "panelTeclado";
-            panelTeclado.Size = new Size(115, 99);
+            panelTeclado.Size = new Size(152, 99);
             panelTeclado.TabIndex = 33;
             panelTeclado.Visible = false;
             // 
@@ -713,7 +937,7 @@
             linkXOrgano.ForeColor = Color.FromArgb(61, 76, 158);
             linkXOrgano.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXOrgano.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXOrgano.Location = new Point(83, 0);
+            linkXOrgano.Location = new Point(108, 0);
             linkXOrgano.Margin = new Padding(2, 0, 2, 0);
             linkXOrgano.Name = "linkXOrgano";
             linkXOrgano.Size = new Size(30, 32);
@@ -747,7 +971,7 @@
             linkXClave.ForeColor = Color.FromArgb(61, 76, 158);
             linkXClave.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXClave.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXClave.Location = new Point(68, 33);
+            linkXClave.Location = new Point(89, 33);
             linkXClave.Margin = new Padding(2, 0, 2, 0);
             linkXClave.Name = "linkXClave";
             linkXClave.Size = new Size(30, 32);
@@ -781,7 +1005,7 @@
             linkXPiano.ForeColor = Color.FromArgb(61, 76, 158);
             linkXPiano.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXPiano.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXPiano.Location = new Point(63, 67);
+            linkXPiano.Location = new Point(120, 67);
             linkXPiano.Margin = new Padding(2, 0, 2, 0);
             linkXPiano.Name = "linkXPiano";
             linkXPiano.Size = new Size(30, 32);
@@ -850,7 +1074,7 @@
             panelCuerda.Location = new Point(21, 181);
             panelCuerda.Margin = new Padding(21, 2, 2, 2);
             panelCuerda.Name = "panelCuerda";
-            panelCuerda.Size = new Size(155, 132);
+            panelCuerda.Size = new Size(177, 132);
             panelCuerda.TabIndex = 38;
             panelCuerda.Visible = false;
             // 
@@ -878,7 +1102,7 @@
             linkXContrabajo.ForeColor = Color.FromArgb(61, 76, 158);
             linkXContrabajo.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXContrabajo.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXContrabajo.Location = new Point(117, 100);
+            linkXContrabajo.Location = new Point(145, 100);
             linkXContrabajo.Margin = new Padding(2, 0, 2, 0);
             linkXContrabajo.Name = "linkXContrabajo";
             linkXContrabajo.Size = new Size(30, 32);
@@ -912,7 +1136,7 @@
             linkXViolin.ForeColor = Color.FromArgb(61, 76, 158);
             linkXViolin.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXViolin.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXViolin.Location = new Point(65, 0);
+            linkXViolin.Location = new Point(96, 0);
             linkXViolin.Margin = new Padding(2, 0, 2, 0);
             linkXViolin.Name = "linkXViolin";
             linkXViolin.Size = new Size(30, 32);
@@ -946,7 +1170,7 @@
             linkXViola.ForeColor = Color.FromArgb(61, 76, 158);
             linkXViola.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXViola.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXViola.Location = new Point(61, 33);
+            linkXViola.Location = new Point(92, 33);
             linkXViola.Margin = new Padding(2, 0, 2, 0);
             linkXViola.Name = "linkXViola";
             linkXViola.Size = new Size(30, 32);
@@ -980,7 +1204,7 @@
             linkXCello.ForeColor = Color.FromArgb(61, 76, 158);
             linkXCello.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXCello.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXCello.Location = new Point(123, 67);
+            linkXCello.Location = new Point(144, 67);
             linkXCello.Margin = new Padding(2, 0, 2, 0);
             linkXCello.Name = "linkXCello";
             linkXCello.Size = new Size(30, 32);
@@ -1047,7 +1271,7 @@
             panelVientoMa.Location = new Point(21, 355);
             panelVientoMa.Margin = new Padding(21, 2, 2, 2);
             panelVientoMa.Name = "panelVientoMa";
-            panelVientoMa.Size = new Size(126, 99);
+            panelVientoMa.Size = new Size(157, 99);
             panelVientoMa.TabIndex = 34;
             panelVientoMa.Visible = false;
             // 
@@ -1059,7 +1283,7 @@
             linkXFagot.ForeColor = Color.FromArgb(61, 76, 158);
             linkXFagot.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXFagot.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXFagot.Location = new Point(67, 67);
+            linkXFagot.Location = new Point(98, 67);
             linkXFagot.Margin = new Padding(2, 0, 2, 0);
             linkXFagot.Name = "linkXFagot";
             linkXFagot.Size = new Size(30, 32);
@@ -1093,7 +1317,7 @@
             linkXOboe.ForeColor = Color.FromArgb(61, 76, 158);
             linkXOboe.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXOboe.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXOboe.Location = new Point(65, 33);
+            linkXOboe.Location = new Point(96, 33);
             linkXOboe.Margin = new Padding(2, 0, 2, 0);
             linkXOboe.Name = "linkXOboe";
             linkXOboe.Size = new Size(30, 32);
@@ -1143,7 +1367,7 @@
             linkXClarinete.ForeColor = Color.FromArgb(61, 76, 158);
             linkXClarinete.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXClarinete.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXClarinete.Location = new Point(94, 0);
+            linkXClarinete.Location = new Point(125, 0);
             linkXClarinete.Margin = new Padding(2, 0, 2, 0);
             linkXClarinete.Name = "linkXClarinete";
             linkXClarinete.Size = new Size(30, 32);
@@ -1212,7 +1436,7 @@
             panelVientoMe.Location = new Point(21, 496);
             panelVientoMe.Margin = new Padding(21, 2, 2, 2);
             panelVientoMe.Name = "panelVientoMe";
-            panelVientoMe.Size = new Size(130, 132);
+            panelVientoMe.Size = new Size(161, 132);
             panelVientoMe.TabIndex = 38;
             panelVientoMe.Visible = false;
             // 
@@ -1224,7 +1448,7 @@
             linkXTrompa.ForeColor = Color.FromArgb(61, 76, 158);
             linkXTrompa.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXTrompa.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXTrompa.Location = new Point(88, 100);
+            linkXTrompa.Location = new Point(119, 100);
             linkXTrompa.Margin = new Padding(2, 0, 2, 0);
             linkXTrompa.Name = "linkXTrompa";
             linkXTrompa.Size = new Size(30, 32);
@@ -1258,7 +1482,7 @@
             linkXTrombon.ForeColor = Color.FromArgb(61, 76, 158);
             linkXTrombon.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXTrombon.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXTrombon.Location = new Point(96, 67);
+            linkXTrombon.Location = new Point(127, 67);
             linkXTrombon.Margin = new Padding(2, 0, 2, 0);
             linkXTrombon.Name = "linkXTrombon";
             linkXTrombon.Size = new Size(30, 32);
@@ -1308,7 +1532,7 @@
             linkXFlauta.ForeColor = Color.FromArgb(61, 76, 158);
             linkXFlauta.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXFlauta.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXFlauta.Location = new Point(67, 33);
+            linkXFlauta.Location = new Point(98, 33);
             linkXFlauta.Margin = new Padding(2, 0, 2, 0);
             linkXFlauta.Name = "linkXFlauta";
             linkXFlauta.Size = new Size(30, 32);
@@ -1342,7 +1566,7 @@
             linkXTrompeta.ForeColor = Color.FromArgb(61, 76, 158);
             linkXTrompeta.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXTrompeta.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXTrompeta.Location = new Point(98, 0);
+            linkXTrompeta.Location = new Point(129, 0);
             linkXTrompeta.Margin = new Padding(2, 0, 2, 0);
             linkXTrompeta.Name = "linkXTrompeta";
             linkXTrompeta.Size = new Size(30, 32);
@@ -1411,7 +1635,7 @@
             panelVoz.Location = new Point(21, 670);
             panelVoz.Margin = new Padding(21, 2, 2, 2);
             panelVoz.Name = "panelVoz";
-            panelVoz.Size = new Size(125, 132);
+            panelVoz.Size = new Size(156, 132);
             panelVoz.TabIndex = 36;
             panelVoz.Visible = false;
             // 
@@ -1439,7 +1663,7 @@
             linkXBajo.ForeColor = Color.FromArgb(61, 76, 158);
             linkXBajo.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXBajo.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXBajo.Location = new Point(50, 100);
+            linkXBajo.Location = new Point(81, 100);
             linkXBajo.Margin = new Padding(2, 0, 2, 0);
             linkXBajo.Name = "linkXBajo";
             linkXBajo.Size = new Size(30, 32);
@@ -1473,7 +1697,7 @@
             linkXSoprano.ForeColor = Color.FromArgb(61, 76, 158);
             linkXSoprano.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXSoprano.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXSoprano.Location = new Point(93, 0);
+            linkXSoprano.Location = new Point(124, 0);
             linkXSoprano.Margin = new Padding(2, 0, 2, 0);
             linkXSoprano.Name = "linkXSoprano";
             linkXSoprano.Size = new Size(30, 32);
@@ -1507,7 +1731,7 @@
             linkXMezzo.ForeColor = Color.FromArgb(61, 76, 158);
             linkXMezzo.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXMezzo.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXMezzo.Location = new Point(79, 33);
+            linkXMezzo.Location = new Point(110, 33);
             linkXMezzo.Margin = new Padding(2, 0, 2, 0);
             linkXMezzo.Name = "linkXMezzo";
             linkXMezzo.Size = new Size(30, 32);
@@ -1541,7 +1765,7 @@
             linkXTenor.ForeColor = Color.FromArgb(61, 76, 158);
             linkXTenor.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXTenor.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXTenor.Location = new Point(67, 67);
+            linkXTenor.Location = new Point(98, 67);
             linkXTenor.Margin = new Padding(2, 0, 2, 0);
             linkXTenor.Name = "linkXTenor";
             linkXTenor.Size = new Size(30, 32);
@@ -1604,7 +1828,7 @@
             panelPercusion.Location = new Point(21, 844);
             panelPercusion.Margin = new Padding(21, 2, 2, 2);
             panelPercusion.Name = "panelPercusion";
-            panelPercusion.Size = new Size(125, 32);
+            panelPercusion.Size = new Size(156, 32);
             panelPercusion.TabIndex = 38;
             panelPercusion.Visible = false;
             // 
@@ -1632,7 +1856,7 @@
             linkXTimbales.ForeColor = Color.FromArgb(61, 76, 158);
             linkXTimbales.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXTimbales.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXTimbales.Location = new Point(93, 0);
+            linkXTimbales.Location = new Point(124, 0);
             linkXTimbales.Margin = new Padding(2, 0, 2, 0);
             linkXTimbales.Name = "linkXTimbales";
             linkXTimbales.Size = new Size(30, 32);
@@ -1650,7 +1874,7 @@
             linkXRomanticismo.ForeColor = Color.FromArgb(61, 76, 158);
             linkXRomanticismo.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXRomanticismo.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXRomanticismo.Location = new Point(183, 172);
+            linkXRomanticismo.Location = new Point(208, 398);
             linkXRomanticismo.Margin = new Padding(2, 0, 2, 0);
             linkXRomanticismo.Name = "linkXRomanticismo";
             linkXRomanticismo.Size = new Size(30, 32);
@@ -1667,7 +1891,7 @@
             linkLabelRoman.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabelRoman.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabelRoman.LinkColor = Color.Black;
-            linkLabelRoman.Location = new Point(53, 175);
+            linkLabelRoman.Location = new Point(48, 401);
             linkLabelRoman.Margin = new Padding(2, 0, 2, 0);
             linkLabelRoman.Name = "linkLabelRoman";
             linkLabelRoman.Size = new Size(136, 28);
@@ -1684,7 +1908,7 @@
             linkXClasicismo.ForeColor = Color.FromArgb(61, 76, 158);
             linkXClasicismo.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXClasicismo.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXClasicismo.Location = new Point(150, 131);
+            linkXClasicismo.Location = new Point(175, 357);
             linkXClasicismo.Margin = new Padding(2, 0, 2, 0);
             linkXClasicismo.Name = "linkXClasicismo";
             linkXClasicismo.Size = new Size(30, 32);
@@ -1701,7 +1925,7 @@
             linkLabelClas.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabelClas.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabelClas.LinkColor = Color.Black;
-            linkLabelClas.Location = new Point(53, 133);
+            linkLabelClas.Location = new Point(48, 359);
             linkLabelClas.Margin = new Padding(2, 0, 2, 0);
             linkLabelClas.Name = "linkLabelClas";
             linkLabelClas.Size = new Size(103, 28);
@@ -1718,7 +1942,7 @@
             linkXBarroco.ForeColor = Color.FromArgb(61, 76, 158);
             linkXBarroco.LinkBehavior = LinkBehavior.NeverUnderline;
             linkXBarroco.LinkColor = Color.FromArgb(61, 76, 158);
-            linkXBarroco.Location = new Point(128, 89);
+            linkXBarroco.Location = new Point(157, 315);
             linkXBarroco.Margin = new Padding(2, 0, 2, 0);
             linkXBarroco.Name = "linkXBarroco";
             linkXBarroco.Size = new Size(30, 32);
@@ -1735,7 +1959,7 @@
             linkLabelBarroco.Font = new Font("Segoe UI", 9.857143F, FontStyle.Regular, GraphicsUnit.Point, 0);
             linkLabelBarroco.LinkBehavior = LinkBehavior.NeverUnderline;
             linkLabelBarroco.LinkColor = Color.Black;
-            linkLabelBarroco.Location = new Point(53, 92);
+            linkLabelBarroco.Location = new Point(48, 318);
             linkLabelBarroco.Margin = new Padding(2, 0, 2, 0);
             linkLabelBarroco.Name = "linkLabelBarroco";
             linkLabelBarroco.Size = new Size(80, 28);
@@ -1749,7 +1973,7 @@
             labelInstrtumento.AutoSize = true;
             labelInstrtumento.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelInstrtumento.ForeColor = SystemColors.ControlDarkDark;
-            labelInstrtumento.Location = new Point(22, 415);
+            labelInstrtumento.Location = new Point(17, 641);
             labelInstrtumento.Margin = new Padding(2, 0, 2, 0);
             labelInstrtumento.Name = "labelInstrtumento";
             labelInstrtumento.Size = new Size(187, 32);
@@ -1761,7 +1985,7 @@
             labelEpoca.AutoSize = true;
             labelEpoca.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelEpoca.ForeColor = SystemColors.ControlDarkDark;
-            labelEpoca.Location = new Point(22, 52);
+            labelEpoca.Location = new Point(17, 278);
             labelEpoca.Margin = new Padding(2, 0, 2, 0);
             labelEpoca.Name = "labelEpoca";
             labelEpoca.Size = new Size(77, 32);
@@ -1774,16 +1998,16 @@
             lblPartituras.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPartituras.Location = new Point(333, 198);
             lblPartituras.Name = "lblPartituras";
-            lblPartituras.Size = new Size(251, 38);
+            lblPartituras.Size = new Size(271, 38);
             lblPartituras.TabIndex = 2;
-            lblPartituras.Text = "Partituras subidas";
+            lblPartituras.Text = "Todas las partituras";
             // 
             // panelBuscar
             // 
             panelBuscar.BackColor = Color.White;
             panelBuscar.Controls.Add(textBoxMisPartituras);
             panelBuscar.Controls.Add(pictureBox2);
-            panelBuscar.Location = new Point(1364, 207);
+            panelBuscar.Location = new Point(1481, 198);
             panelBuscar.Name = "panelBuscar";
             panelBuscar.Size = new Size(383, 55);
             panelBuscar.TabIndex = 7;
@@ -1808,31 +2032,44 @@
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // label1
+            // labelUsuario
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(337, 80);
-            label1.Name = "label1";
-            label1.Size = new Size(201, 65);
-            label1.TabIndex = 8;
-            label1.Text = "Usuario";
+            labelUsuario.AutoSize = true;
+            labelUsuario.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelUsuario.Location = new Point(326, 84);
+            labelUsuario.Name = "labelUsuario";
+            labelUsuario.Size = new Size(201, 65);
+            labelUsuario.TabIndex = 8;
+            labelUsuario.Text = "Usuario";
+            // 
+            // labelMostrar
+            // 
+            labelMostrar.AutoSize = true;
+            labelMostrar.Font = new Font("Segoe UI", 16F, FontStyle.Italic, GraphicsUnit.Point, 0);
+            labelMostrar.Location = new Point(900, 780);
+            labelMostrar.Name = "labelMostrar";
+            labelMostrar.Size = new Size(436, 45);
+            labelMostrar.TabIndex = 15;
+            labelMostrar.Text = "No hay partituras que mostrar";
+            labelMostrar.Visible = false;
             // 
             // MySheetsControl
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(labelMostrar);
             Controls.Add(filaPartirua);
-            Controls.Add(label1);
+            Controls.Add(labelUsuario);
             Controls.Add(panelBuscar);
             Controls.Add(lblPartituras);
             Controls.Add(panelOpciones);
             Controls.Add(flowPartiturasPanel);
             Name = "MySheetsControl";
-            Size = new Size(1771, 1606);
+            Size = new Size(2158, 2019);
             flowPartiturasPanel.ResumeLayout(false);
             filaPartitura.ResumeLayout(false);
             filaPartitura.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnEditar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnDescargar).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnVer).EndInit();
             ((System.ComponentModel.ISupportInitialize)btnEliminar).EndInit();
@@ -1894,7 +2131,7 @@
         private Panel panelBuscar;
         private TextBox textBoxMisPartituras;
         private PictureBox pictureBox2;
-        private Label label1;
+        private Label labelUsuario;
         private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         private Panel filaPartirua;
         private Label label2;
@@ -2010,5 +2247,19 @@
         private Label label10;
         private Label txtAgrupacion;
         private Label label9;
+        private PictureBox btnEditar;
+        private Label label11;
+        private LinkLabel linkXGratuita;
+        private LinkLabel linkLabelGratuita;
+        private Label labelLimpiar;
+        private Label label12;
+        private LinkLabel linkXPropia;
+        private LinkLabel linkLabelPropia;
+        private LinkLabel linkXComprada;
+        private LinkLabel linkLabelComprada;
+        private Label label13;
+        private LinkLabel linkXFavorita;
+        private LinkLabel linkLabelFavorita;
+        private Label labelMostrar;
     }
 }

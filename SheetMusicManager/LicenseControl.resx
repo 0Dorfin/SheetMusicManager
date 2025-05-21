@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!--
+    Microsoft ResX Schema
+
+    Version 2.0
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
+    associated with the data types.
+
+    Example:
+
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+
+    There are any number of "resheader" rows that contain simple
+    name/value pairs.
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
+    mimetype set.
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
+    extensible. For a given mimetype the value must be set accordingly:
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
+    read any of the formats listed below.
+
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="richTextBox5.Text" xml:space="preserve">
+    <value>La licencia permanente otorga acceso ilimitado y sin fecha de caducidad a la partitura adquirida. Está destinada a músicos, docentes e instituciones que desean incorporar la obra a su repertorio habitual de manera definitiva.
+
+Con esta modalidad, el usuario puede consultar la obra dentro de la aplicación sin restricciones temporales, imprimir una copia personal en cualquier momento, y además descargar el archivo una vez para conservarlo localmente como respaldo.
+
+Esta licencia representa la opción más completa dentro del sistema de acceso, permitiendo un uso versátil y permanente de la obra dentro de los límites de uso personal. La descarga autorizada no habilita su redistribución, modificación ni explotación comercial.
+
+Es la opción ideal para quienes desean conservar la partitura de forma estable como parte de su archivo musical personal o profesional.
+
+La adquisición de esta licencia supone la aceptación plena de estas condiciones y la responsabilidad del usuario de utilizarlas conforme al marco legal y ético definido por el servicio.</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Esta licencia permite al usuario acceder y visualizar la partitura adquirida durante un período continuo de ciento ochenta (180) días desde el momento de la compra. El acceso está restringido a la propia aplicación y requiere el uso de la cuenta de usuario registrada.</value>
+  </data>
+  <data name="richTextBox4.Text" xml:space="preserve">
+    <value>La licencia de un año proporciona acceso ininterrumpido a la partitura durante trescientos sesenta y cinco días desde su adquisición. Está orientada a músicos que requieren acceso prolongado por motivos de estudio, docencia, práctica profesional o programas de formación extendida.
+
+Durante ese tiempo, la partitura puede consultarse libremente desde la aplicación y el usuario tiene derecho a imprimir una copia personal. Esta impresión debe realizarse dentro del período de validez de la licencia y queda limitada al uso exclusivo del titular.
+
+No se permite la descarga digital del archivo. La obra debe permanecer dentro del entorno de la aplicación, garantizando un uso controlado y conforme al marco legal vigente.
+
+Esta modalidad ofrece la tranquilidad de contar con acceso continuo durante un año completo, adaptándose a los ritmos propios del aprendizaje y la interpretación musical en profundidad.
+
+La adquisición de esta licencia supone la aceptación plena de estas condiciones y la responsabilidad del usuario de utilizarlas conforme al marco legal y ético definido por el servicio.</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Esta licencia permite al usuario acceder y visualizar la partitura adquirida durante un período continuo de ciento ochenta (180) días desde el momento de la compra. El acceso está restringido a la propia aplicación y requiere el uso de la cuenta de usuario registrada.</value>
+  </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Esta licencia otorga al usuario acceso a la partitura durante ciento ochenta días consecutivos desde el momento de adquisición. Está pensada para proyectos musicales más prolongados, como ciclos educativos semestrales o preparación de conciertos y repertorios densos.
+
+El usuario puede visualizar la obra dentro de la aplicación durante toda la duración de la licencia y realizar una impresión personal para facilitar el estudio o interpretación en papel. Esta impresión debe hacerse dentro del periodo activo.
+
+No incluye la opción de descarga digital del archivo. El acceso y uso del contenido se limita al entorno de la aplicación y su impresión autorizada.
+
+Es una alternativa equilibrada entre flexibilidad temporal y acceso cómodo al material necesario para un trabajo musical sostenido.
+
+La adquisición de esta licencia supone la aceptación plena de estas condiciones y la responsabilidad del usuario de utilizarlas conforme al marco legal y ético definido por el servicio.</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Esta licencia permite al usuario acceder y visualizar la partitura adquirida durante un período continuo de ciento ochenta (180) días desde el momento de la compra. El acceso está restringido a la propia aplicación y requiere el uso de la cuenta de usuario registrada.</value>
+  </data>
+  <data name="richTextBox2.Text" xml:space="preserve">
+    <value>Esta licencia permite al usuario acceder a la partitura durante un período continuo de noventa días, contados desde la fecha de compra. Está orientada a músicos que necesitan la obra para un proyecto puntual, preparación de exámenes o ensayos breves.
+
+Durante este tiempo, el usuario puede consultar la partitura libremente desde la aplicación y dispone de la opción de imprimirla una vez para uso personal. La impresión está autorizada únicamente durante el periodo de vigencia de la licencia.
+
+No está permitida la descarga digital del archivo. El contenido debe visualizarse o imprimirse directamente desde la plataforma, sin posibilidad de guardarlo en otros formatos.
+
+Esta opción resulta ideal para quienes desean acceder de forma temporal y económica a repertorio específico sin necesidad de mantenerlo en su biblioteca a largo plazo.
+
+La adquisición de esta licencia supone la aceptación plena de estas condiciones y la responsabilidad del usuario de utilizarlas conforme al marco legal y ético definido por el servicio.</value>
+  </data>
+  <data name="richTextBox3.Text" xml:space="preserve">
+    <value>Todas las licencias, sin importar su duración o coste, están sujetas a las siguientes condiciones generales:
+
+El contenido adquirido es de uso estrictamente personal e intransferible.
+No se permite la reproducción, distribución, modificación, venta, cesión, ni publicación de las partituras sin autorización previa por escrito del titular de derechos.
+No está permitido compartir las partituras, ni total ni parcialmente, por medios físicos, digitales, redes sociales, plataformas educativas o cualquier otro canal de difusión.
+Está prohibido realizar capturas de pantalla, grabaciones o transcripciones con fines de copia o distribución.
+La propiedad intelectual de las obras permanece en todo momento en manos de sus autores, editores o representantes legales.
+El incumplimiento de estas condiciones podrá derivar en la revocación inmediata del acceso, suspensión de la cuenta y acciones legales conforme a la legislación vigente.
+La adquisición de una licencia implica la aceptación plena y consciente de estas condiciones generales, además de las específicas asociadas a cada tipo de licencia.
+
+Estas normas están destinadas a proteger el trabajo de compositores, editores y creadores, garantizando un uso justo, ético y legal del contenido ofrecido en esta plataforma.</value>
+  </data>
+  <data name="scrollableRichText3.Text" xml:space="preserve">
+    <value>Las licencias gratuitas están sujetas a las siguientes condiciones generales:
+
+El contenido disponible bajo licencia gratuita está destinado exclusivamente al uso personal, educativo o cultural no comercial.
+Está permitido consultar y utilizar las partituras dentro de la aplicación para el estudio individual, clases o actividades formativas sin ánimo de lucro.
+La descarga, distribución, reproducción, venta, cesión o publicación del material fuera del entorno de la plataforma no está autorizada sin consentimiento expreso del titular de derechos o del administrador del contenido.
+Tampoco se permite incorporar las partituras gratuitas en compilaciones, publicaciones u otras plataformas con acceso restringido o coste para los usuarios.
+El uso colectivo está permitido siempre que se mantenga en un contexto educativo abierto, como clases en escuelas, talleres u otras actividades gratuitas.
+El incumplimiento de estas condiciones puede implicar la restricción del acceso a los recursos gratuitos, la suspensión de la cuenta o la toma de medidas legales según la normativa vigente.
+
+Estas normas están diseñadas para proteger la difusión libre del conocimiento musical y fomentar el acceso responsable y respetuoso a los recursos compartidos sin coste.</value>
+  </data>
+  <data name="richTextBox7.Text" xml:space="preserve">
+    <value>Esta licencia concede acceso gratuito y sin restricciones a una partitura, permitiendo su uso con fines educativos, promocionales, personales o de interpretación.
+
+El usuario podrá visualizar, imprimir y descargar la partitura sin coste alguno, directamente desde la plataforma. Esta modalidad está diseñada para fomentar el acceso abierto a contenidos musicales y facilitar su difusión sin limitaciones temporales ni técnicas.
+
+Esta opción es ideal para docentes, estudiantes, intérpretes o cualquier persona interesada en explorar y utilizar libremente el material.
+
+La utilización de esta licencia implica la aceptación expresa de las condiciones generales de uso de la plataforma. El usuario se compromete a respetar los límites legales y éticos establecidos, promoviendo un uso responsable del contenido compartido de forma gratuita.</value>
+  </data>
+</root>

@@ -74,7 +74,7 @@ namespace SheetMusicManager
 
         private bool ExisteCorreoEnBD(string correo)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 
@@ -88,7 +88,7 @@ namespace SheetMusicManager
 
         private string ObtenerNombreUsuario(string correo)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 

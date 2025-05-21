@@ -100,7 +100,7 @@ namespace SheetMusicManager
                 labelVencimiento.Text = "";
             }
 
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using (var conn = new SqlConnection(connStr))
             {
                 conn.Open();
@@ -252,7 +252,7 @@ namespace SheetMusicManager
             string tipoEncontrado = null;
             DateTime? fechaFin = null;
 
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 
@@ -310,7 +310,7 @@ namespace SheetMusicManager
 
         private void RegistrarCompraEnPartiturasUsuario(int usuarioId, int partituraId)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 
@@ -374,7 +374,7 @@ namespace SheetMusicManager
 
         private int GuardarPedidoEnBD(int usuarioId)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 
@@ -386,7 +386,7 @@ namespace SheetMusicManager
         private void GuardarLicenciaEnBD(int usuarioId, int partituraId, string tipo, DateTime inicio, DateTime? fin, int idPedido)
         {
             decimal precio = CalcularPrecioPorTipo(tipo);
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 
@@ -456,7 +456,7 @@ namespace SheetMusicManager
         {
             string tipoLicenciaNueva = GetTipoLicenciaSeleccionado();
 
-            using var conn = new SqlConnection("Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;");
+            using var conn = new SqlConnection(DatabaseConnection.ConnectionString);
             conn.Open();
 
             var checkCmd = new SqlCommand(@"
@@ -552,7 +552,7 @@ namespace SheetMusicManager
 
         private void GuardarFavorito(int usuarioId, int partituraId)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 
@@ -602,7 +602,7 @@ namespace SheetMusicManager
 
         private void EliminarFavorito(int usuarioId, int partituraId)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 

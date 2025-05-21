@@ -17,8 +17,8 @@ namespace SheetMusicManager
 
         private void CargarVentasUsuario(DateTime? desde = null, DateTime? hasta = null, List<string> licencias = null, List<string> usuarios = null)
         {
-            string connectionString = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
-            using var conn = new SqlConnection(connectionString);
+            string connStr = DatabaseConnection.ConnectionString;
+            using var conn = new SqlConnection(connStr);
             conn.Open();
 
             string query = @"
@@ -264,7 +264,7 @@ namespace SheetMusicManager
 
         private void CargarUsuarios()
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 

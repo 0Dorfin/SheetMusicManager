@@ -95,7 +95,7 @@ namespace SheetMusicManager
         {
             flowLayoutPanelPartituras.Controls.Clear();
 
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using (var conn = new SqlConnection(connStr))
             {
                 conn.Open();
@@ -162,7 +162,7 @@ namespace SheetMusicManager
         {
             try
             {
-                string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+                string connStr = DatabaseConnection.ConnectionString;
                 using (var conn = new SqlConnection(connStr))
                 {
                     conn.Open();
@@ -472,7 +472,7 @@ namespace SheetMusicManager
         private Dictionary<string, int> ObtenerRecuentoPorCampo(string campo)
         {
             Dictionary<string, int> recuentos = new Dictionary<string, int>();
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             string query = $"SELECT {campo}, COUNT(*) as Total FROM Partituras GROUP BY {campo}";
 
             using (var conn = new SqlConnection(connStr))

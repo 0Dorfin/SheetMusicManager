@@ -153,7 +153,7 @@ namespace SheetMusicManager
                 }
 
 
-                string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+                string connStr = DatabaseConnection.ConnectionString;
 
                 using (var conn = new SqlConnection(connStr))
                 {
@@ -324,7 +324,7 @@ namespace SheetMusicManager
                 }
             }
 
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using (var conn = new SqlConnection(connStr))
             {
                 conn.Open();
@@ -449,7 +449,7 @@ namespace SheetMusicManager
                 item.Checked = false;
 
             // 2. Obtener instrumentos desde la tabla intermedia
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using (var conn = new SqlConnection(connStr))
             {
                 conn.Open();
@@ -520,7 +520,7 @@ namespace SheetMusicManager
         private void ActualizarPartituraEnBD(int id, string nombre, string compositor, string epoca,
                                      string agrupacion, string instrumentos, decimal precio, byte[] pdfBytes)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            string connStr = DatabaseConnection.ConnectionString;
 
             using (var conn = new SqlConnection(connStr))
             {

@@ -134,7 +134,7 @@ namespace SheetMusicManager
                 return;
             }
 
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using (SqlConnection conn = new SqlConnection(connStr))
             {
                 conn.Open();

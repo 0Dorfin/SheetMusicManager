@@ -28,7 +28,7 @@ namespace SheetMusicManager
             decimal total = 0;
             int cantidad = 0;
 
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;Encrypt=True;TrustServerCertificate=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 
@@ -102,7 +102,7 @@ namespace SheetMusicManager
 
         private void EliminarDeCarrito(int id)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 
@@ -222,7 +222,7 @@ namespace SheetMusicManager
                 DialogResult confirm = MessageBox.Show("¿Estás seguro de que quieres vaciar el carrito completo?", "Vaciar carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (confirm == DialogResult.Yes)
                 {
-                    string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+                    string connStr = DatabaseConnection.ConnectionString;
                     using var conn = new SqlConnection(connStr);
                     conn.Open();
 
@@ -259,7 +259,7 @@ namespace SheetMusicManager
             if (result != DialogResult.Yes)
                 return;
 
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 

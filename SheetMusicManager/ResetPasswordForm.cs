@@ -102,7 +102,7 @@ namespace SheetMusicManager
 
         private void ActualizarContraseñaEnBD(string correo, string nuevaPass)
         {
-            string connStr = "Server=DORFIN\\SQLEXPRESS;Database=PartiturasDB;Trusted_Connection=True;";
+            string connStr = DatabaseConnection.ConnectionString;
             using var conn = new SqlConnection(connStr);
             conn.Open();
 

@@ -62,3 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 *.java linguist-vendored
+*.XSLT linguist-vendored

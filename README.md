@@ -1,3 +1,4 @@
+![image](https://github.com/user-attachments/assets/81dbe9df-c62e-407d-b295-b83f46c663af)
 # Sheetify
 ## Description
 Sheetify is a desktop-based sheet music management system developed with C# and .NET. It functions as a comprehensive platform for musicians to buy, sell, organize, and digitize sheet music, both in PDF and image formats. This application aims to centralize all music score-related tasks in a single intuitive environment.
